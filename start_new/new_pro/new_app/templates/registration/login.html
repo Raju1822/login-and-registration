@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <main class="container my-5">
+  <div class="row">
+    <section class="col-md-6 my-5 offset-md-3">
+
+      <div class="card shadow p-5">
+		  {% load crispy_forms_tags %}
+          {% block content %}
+        <form method="post" class="from-group">
+
+          <h3 class="text-center text-uppercase mb-4">Login</h3>
+          <hr>
+{% csrf_token %}
+	{{form|crispy}}
+	<p class="mt-3 text-white">Don't have an accoount? Create one <a href="/register" class="text-white">here</a></p>
+	<button class="btn btn-block btn-secondary rounded-pill mt-3" type="submit" class="btn btn-success">Login</button>
+
+        </form>
+		  {% endblock %}
+      </div>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>
+
+
